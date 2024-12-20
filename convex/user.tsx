@@ -3,11 +3,11 @@ import { mutation, query } from "./_generated/server";
 
 export const getUser = query({
   args: {
-    email: v.string(),
+    email: v.optional(v.string()),
   },
 
-  handler: async (ctx, args) => {
-    const result = await ctx.db
+  handler: async ({db}, {email}) => {
+    const result = await db
       .query("user")
       .filter((q) => q.eq(q.field("email"), args.email))
       .collect();
