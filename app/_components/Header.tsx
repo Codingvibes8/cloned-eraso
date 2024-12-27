@@ -10,7 +10,13 @@ function Header() {
   return (
     <header className="bg-black">
       <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
-        <Image src="/logo.svg" alt="logo" width={100} height={100} />
+        <div className="flex gap-2 items-center">
+           <span className="text-white text-2xl font-serif font-bold">
+            Cloned-Erasor
+           </span>
+            <Image src="/logo-maker.svg" alt="logo" width={40} height={40} className="flex items-center"/>
+        </div>
+        
 
         <div className="flex flex-1 items-center justify-end md:justify-between">
           <nav aria-label="Global" className="hidden md:block">

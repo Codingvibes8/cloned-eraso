@@ -6,7 +6,8 @@ export const getUser = query({
     email: v.optional(v.string()),
   },
 
-  handler: async ({db}, {email}) => {
+  handler: async ({ db }, { email }) => {
+    const args = { email };
     const result = await db
       .query("user")
       .filter((q) => q.eq(q.field("email"), args.email))

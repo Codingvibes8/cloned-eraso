@@ -11,9 +11,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import Constant from "@/app/_constant/Constant";
+import {Constant} from "@/app/_constant/Constant";
 import PricingDialog from "./PricingDialog";
 import {Button} from "@/components/ui/button";
+
+
+
 function SideNavBottomSection({ onFileCreate, totalFiles }: any) {
   const menuList = [
     {
@@ -36,17 +39,20 @@ function SideNavBottomSection({ onFileCreate, totalFiles }: any) {
     },
   ];
   const [fileInput, setFileInput] = useState("");
+
+  
+
   return (
     <div>
       {menuList.map((menu, index) => (
-        <h2
+        <div
           key={index}
           className="flex gap-2 p-1 px-2 text-[14px] 
         hover:bg-gray-100 rounded-md cursor-pointer"
         >
           <menu.icon className="h-5 w-5" />
           {menu.name}
-        </h2>
+        </div>
       ))}
 
       {/* Add New File Button  */}

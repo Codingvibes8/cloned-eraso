@@ -14,9 +14,9 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 export interface TEAM {
-  createdBy: String;
-  teamName: String;
-  _id: String;
+  createdBy: string;
+  teamName: string;
+  _id: string;
 }
 function SideNavTopSection({ user, setActiveTeamInfo }: any) {
   const menu = [
@@ -37,6 +37,8 @@ function SideNavTopSection({ user, setActiveTeamInfo }: any) {
   const convex = useConvex();
   const [activeTeam, setActiveTeam] = useState<TEAM>();
   const [teamList, setTeamList] = useState<TEAM[]>();
+
+  
   useEffect(() => {
     user && getTeamList();
   }, [user]);
@@ -44,6 +46,9 @@ function SideNavTopSection({ user, setActiveTeamInfo }: any) {
   useEffect(() => {
     activeTeam ? setActiveTeam(activeTeam) : null;
   }, [activeTeam]);
+
+
+  
   const getTeamList = async () => {
     const result = await convex.query(api.teams.getTeam, {
       email: user?.email,
@@ -132,10 +137,10 @@ function SideNavTopSection({ user, setActiveTeamInfo }: any) {
                 className="rounded-full"
               />
               <div>
-                <h2 className="text-[14px] font-bold">
+                <h2 className="text-[17px] font-bold">
                   {user?.given_name} {user?.family_name}
                 </h2>
-                <h2 className="text-[12px] text-gray-500">{user?.email}</h2>
+                <h2 className="text-[15px] text-gray-700">{user?.email}</h2>
               </div>
             </div>
           )}
